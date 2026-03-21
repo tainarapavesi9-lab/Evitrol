@@ -39,11 +39,12 @@
             --brand-primary-soft: rgba(23, 66, 67, 0.05);
             --brand-dark: #0f172a;
             --brand-bg: #FCFAFA;
+            --footer-bg: #1A1817;
         }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--brand-bg); color: #334155; scroll-behavior: smooth; overflow-x: hidden; }
         h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
         
-        /* Ajuste do Cabeçalho para Verde com Logo Branca */
+        /* Cabeçalho Verde com Logo Branca */
         .brand-header { background-color: var(--brand-primary); border-bottom: 1px solid rgba(255,255,255,0.1); }
         .logo-white { filter: brightness(0) invert(1); }
 
@@ -57,11 +58,10 @@
         .secondary-button { transition: all 0.3s ease; background: white; color: var(--brand-primary); border: 2px solid var(--brand-primary-soft); }
         .secondary-button:hover { background: var(--brand-primary-soft); border-color: var(--brand-primary); }
         
-        .product-shadow { box-shadow: 0 20px 40px -10px rgba(23, 66, 67, 0.15); }
         .gradient-text { color: var(--brand-primary); }
         .modal-open { overflow: hidden; }
 
-        /* FAQ Accordion Transitions */
+        /* FAQ Sanfona */
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
         .faq-item.active .faq-answer { max-height: 600px; transition: max-height 0.5s ease-in; }
         .faq-item.active .chevron-icon { transform: rotate(180deg); }
@@ -78,7 +78,7 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header -->
+    <!-- Header Premium -->
     <header class="brand-header py-4 px-6 md:px-12 sticky top-0 z-50 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
@@ -91,14 +91,13 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Seção Hero Otimizada -->
         <section id="hero" class="hero-section-bg">
             <div class="hero-overlay-pattern"></div>
             
             <div class="container mx-auto px-6 py-8 md:py-20 relative z-10">
                 <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
                     
-                    <!-- Content Column -->
                     <div class="reveal active text-center lg:text-left">
                         <div class="inline-flex items-center gap-2 bg-[#174243]/5 px-4 py-1.5 rounded-full mb-6 border border-[#174243]/10">
                             <span class="text-[10px] font-black uppercase tracking-widest text-[#174243]" data-i18n="premium_badge">⭐ PREMIUM METABOLIC SUPPORT</span>
@@ -108,7 +107,7 @@
                             The <span class="gradient-text italic">“Metabolic Control”</span> Formula For Lean, Energized Body
                         </h1>
 
-                        <!-- Foto Mobile (Aumentada e sem bordas agressivas) -->
+                        <!-- Foto Mobile (Destaque logo após o título) -->
                         <div class="lg:hidden mb-10 flex justify-center">
                             <div class="w-full max-w-[420px] px-4">
                                 <img src="images/evitrol1.png" alt="Evitrol Metabolism Support" class="w-full h-auto drop-shadow-2xl">
@@ -141,7 +140,7 @@
                             </div>
                         </div>
 
-                        <!-- Card de CTA -->
+                        <!-- Card de CTA Estratégico -->
                         <div class="cta-card p-6 md:p-8 border-t-4 border-[#174243] max-w-md mx-auto lg:mx-0">
                             <div class="flex items-center justify-between mb-6">
                                 <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest" data-i18n="exclusive_access">[ EXCLUSIVE ACCESS ]</span>
@@ -166,7 +165,7 @@
                     <!-- Foto Desktop -->
                     <div class="reveal active delay-300 hidden lg:block">
                         <div class="relative max-w-md mx-auto">
-                            <div class="aspect-[4/5] bg-[#174243]/5 rounded-[3rem] overflow-hidden product-shadow border-8 border-white">
+                            <div class="aspect-[4/5] rounded-[3rem] overflow-hidden drop-shadow-2xl">
                                 <img src="images/evitrol1.png" alt="Evitrol Metabolic Formula" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
                             </div>
                         </div>
@@ -175,7 +174,7 @@
             </div>
         </section>
 
-        <!-- Stats Section -->
+        <!-- Seção de Estatísticas -->
         <section class="bg-[#174243] py-16">
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto text-white">
@@ -199,7 +198,7 @@
             </div>
         </section>
 
-        <!-- FAQ Section -->
+        <!-- Seção FAQ com Efeito Sanfona -->
         <section class="py-24 bg-white">
             <div class="container max-w-4xl mx-auto px-6">
                 <div class="text-center mb-16">
@@ -207,7 +206,7 @@
                 </div>
                 
                 <div class="space-y-4" id="faq-container">
-                    <!-- Q1 -->
+                    <!-- Perguntas configuradas no script i18n -->
                     <div class="faq-item border border-slate-100 rounded-3xl overflow-hidden transition-all hover:border-[#174243]/20">
                         <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center bg-white group" onclick="toggleFaq(this)">
                             <span class="font-bold text-slate-800 text-base md:text-lg group-hover:text-[#174243]" data-i18n="faq_q1">How does Evitrol support metabolism and weight balance?</span>
@@ -215,11 +214,10 @@
                         </button>
                         <div class="faq-answer">
                             <div class="px-8 pb-8 text-slate-500 text-sm md:text-base leading-relaxed" data-i18n="faq_a1">
-                                Evitrol is designed to support your body’s natural metabolic processes using plant-based ingredients. It helps promote a more efficient metabolism, which may support weight balance when combined with a balanced lifestyle.
+                                Evitrol is designed to support your body’s natural metabolic processes using plant-based ingredients. It helps promote a more efficient metabolism.
                             </div>
                         </div>
                     </div>
-                    <!-- Q2 -->
                     <div class="faq-item border border-slate-100 rounded-3xl overflow-hidden transition-all hover:border-[#174243]/20">
                         <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center bg-white group" onclick="toggleFaq(this)">
                             <span class="font-bold text-slate-800 text-base md:text-lg group-hover:text-[#174243]" data-i18n="faq_q2">Can Evitrol help reduce cravings and appetite?</span>
@@ -227,19 +225,7 @@
                         </button>
                         <div class="faq-answer">
                             <div class="px-8 pb-8 text-slate-500 text-sm md:text-base leading-relaxed" data-i18n="faq_a2">
-                                Many users report feeling more in control of their appetite when using Evitrol consistently. The formula is designed to support satiety and help reduce unnecessary snacking throughout the day.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Q3 -->
-                    <div class="faq-item border border-slate-100 rounded-3xl overflow-hidden transition-all hover:border-[#174243]/20">
-                        <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center bg-white group" onclick="toggleFaq(this)">
-                            <span class="font-bold text-slate-800 text-base md:text-lg group-hover:text-[#174243]" data-i18n="faq_q3">Is Evitrol safe for daily use?</span>
-                            <i data-lucide="chevron-down" class="chevron-icon w-5 h-5 text-slate-400 group-hover:text-[#174243]"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="px-8 pb-8 text-slate-500 text-sm md:text-base leading-relaxed" data-i18n="faq_a3">
-                                Evitrol is formulated with carefully selected ingredients and is intended for daily use. However, if you are pregnant, nursing, or taking medication, it is recommended to consult a healthcare professional before use.
+                                Many users report feeling more in control of their appetite when using Evitrol consistently.
                             </div>
                         </div>
                     </div>
@@ -248,37 +234,37 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-slate-50 py-20 border-t border-slate-200">
+    <!-- Rodapé Premium Escuro -->
+    <footer class="py-20 border-t border-white/5 text-slate-400" style="background-color: var(--footer-bg);">
         <div class="container mx-auto px-6 text-center">
             <div class="mb-12">
-                <img src="images/download (1).svg" alt="Evitrol" class="h-6 mx-auto mb-6 opacity-40 grayscale">
+                <img src="images/download (1).svg" alt="Evitrol" class="h-6 mx-auto mb-8 logo-white opacity-40 hover:opacity-100 transition-opacity">
                 <div class="space-y-2">
-                    <p class="text-[10px] font-bold text-slate-800 uppercase tracking-widest">UAB Commerce Core</p>
-                    <p class="text-[9px] text-slate-400 uppercase tracking-widest font-bold" data-i18n="authorized_distributor">OFFICIAL AUTHORIZED DISTRIBUTOR</p>
-                    <p class="text-[9px] text-slate-400">Savanorių pr. 363, Kaunas, Lithuania | Reg: 302566167</p>
-                    <p class="text-[10px] font-bold text-[#174243]">support@get-evitrol.com | +1 (331) 207-9814</p>
+                    <p class="text-[10px] font-bold text-white uppercase tracking-widest">UAB Commerce Core</p>
+                    <p class="text-[9px] text-slate-500 uppercase tracking-widest font-bold" data-i18n="authorized_distributor">OFFICIAL AUTHORIZED DISTRIBUTOR</p>
+                    <p class="text-[9px] text-slate-500">Savanorių pr. 363, Kaunas, Lithuania | Reg: 302566167</p>
+                    <p class="text-[10px] font-bold text-slate-200 mt-2">support@get-evitrol.com | +1 (331) 207-9814</p>
                 </div>
             </div>
             
-            <div class="flex justify-center flex-wrap gap-x-8 gap-y-4 mb-12 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
-                <button onclick="openModal('shipping')" data-i18n="link_shipping">Shipping & Returns</button>
-                <button onclick="openModal('terms')" data-i18n="link_terms">Terms of Service</button>
-                <button onclick="openModal('privacy')" data-i18n="link_privacy">Privacy Policy</button>
-                <button onclick="openModal('contact')" data-i18n="link_contact">Contact Us</button>
+            <div class="flex justify-center flex-wrap gap-x-8 gap-y-4 mb-12 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                <button onclick="openModal('shipping')" class="hover:text-white transition-colors" data-i18n="link_shipping">Shipping & Returns</button>
+                <button onclick="openModal('terms')" class="hover:text-white transition-colors" data-i18n="link_terms">Terms of Service</button>
+                <button onclick="openModal('privacy')" class="hover:text-white transition-colors" data-i18n="link_privacy">Privacy Policy</button>
+                <button onclick="openModal('contact')" class="hover:text-white transition-colors" data-i18n="link_contact">Contact Us</button>
             </div>
 
-            <div class="max-w-4xl mx-auto text-[9px] leading-relaxed text-slate-400 space-y-4 pt-10 border-t border-slate-200">
+            <div class="max-w-4xl mx-auto text-[9px] leading-relaxed text-slate-500 space-y-4 pt-10 border-t border-white/5">
                 <p data-i18n="disc_1">Disclaimer: This site is not a part of the Google™ or Meta Inc. website. Additionally, this site is NOT endorsed by Google™ or Meta Inc. in any way.</p>
-                <p data-i18n="disc_2">Evitrol is a natural dietary supplement. The statements on this website have not been evaluated by the Food and Drug Administration. Individual results may vary. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
-                <p class="font-bold text-slate-500 uppercase tracking-[0.2em] pt-4">&copy; 2026 EVITROL METABOLICS. ALL RIGHTS RESERVED.</p>
+                <p data-i18n="disc_2">Evitrol is a natural dietary supplement. The statements on this website have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+                <p class="font-bold text-slate-600 uppercase tracking-[0.2em] pt-4">&copy; 2026 EVITROL METABOLICS. ALL RIGHTS RESERVED.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Modal System -->
+    <!-- Sistema de Modais Legal -->
     <div id="policy-modal" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true">
-        <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-md" onclick="closeModal()"></div>
+        <div class="fixed inset-0 bg-black/80 backdrop-blur-md" onclick="closeModal()"></div>
         <div class="fixed inset-0 z-10 overflow-y-auto">
             <div class="flex min-h-full items-center justify-center p-4">
                 <div class="relative w-full max-w-4xl bg-white rounded-[2.5rem] shadow-2xl overflow-hidden">
@@ -290,7 +276,7 @@
                     </div>
                     <div class="p-10 md:p-12 overflow-y-auto max-h-[65vh] text-sm text-slate-600 leading-relaxed legal-content" id="modal-content-area"></div>
                     <div class="px-8 py-6 bg-slate-50 border-t border-slate-100 flex justify-center">
-                        <button onclick="closeModal()" class="bg-[#174243] text-white px-10 py-3 rounded-xl text-[10px] font-bold uppercase tracking-widest shadow-xl" data-i18n="close_window">Close Window</button>
+                        <button onclick="closeModal()" class="bg-[#174243] text-white px-10 py-3 rounded-xl text-[10px] font-bold uppercase tracking-widest shadow-xl transition-transform active:scale-95" data-i18n="close_window">Close Window</button>
                     </div>
                 </div>
             </div>
@@ -309,9 +295,9 @@
             de: {
                 order_now: "JETZT BESTELLEN",
                 start_quiz: "STOFFWECHSEL-QUIZ STARTEN",
-                premium_badge: "⭐ PREMIUM STOFFWECHSEL-UNTERSTÜTZUNG",
+                premium_badge: "⭐ PREMIUM UNTERSTÜTZUNG",
                 hero_title: 'Die <span class="gradient-text italic">„Metabolic Control“-Formel</span> für einen vitalen Körper',
-                stat_1: "Spürbare Körperverbesserung*",
+                stat_1: "Sichtbare Verbesserung*",
                 faq_title: "Häufig gestellte Fragen",
                 authorized_distributor: "OFFIZIELLER AUTORISIERTER DISTRIBUTOR",
                 close_window: "FENSTER SCHLIESSEN"
@@ -358,34 +344,15 @@
             const contents = {
                 privacy: { 
                     title: "Política de Privacidade", 
-                    html: `
-                        <p>Última atualização: 24 de outubro de 2025</p>
-                        <p>Esta Política de Privacidade (a “Política”) define as práticas da Haur BV...</p>
-                        <h4>1. Dados pessoais que coletamos</h4>
-                        <p>Coletamos nome, endereço, e-mail e dados de transação para processar seus pedidos de forma segura.</p>
-                        <h4>2. Como utilizamos seus dados pessoais</h4>
-                        <p>Processamos seus dados para fornecer serviços, processar pagamentos e cumprir obrigações contratuais.</p>
-                    `
+                    html: `<p>Última atualização: 24 de outubro de 2025</p><h4>1. Dados pessoais que coletamos</h4><p>Coletamos nome, endereço e e-mail para processar pedidos de forma segura e transparente.</p>`
                 },
                 terms: { 
                     title: "Nutzungsbedingungen", 
-                    html: `
-                        <p>Zuletzt aktualisiert: 24. Oktober 2025</p>
-                        <p>Diese Bedingungen regeln Ihre Nutzung von Haur B.V. (Amsterdam).</p>
-                        <h4>3. Keine Medizinische Beratung</h4>
-                        <p>Nahrungsergänzungsmittel sind kein Ersatz für professionelle ärztliche Beratung.</p>
-                    `
+                    html: `<h4>3. Keine Medizinische Beratung</h4><p>Nahrungsergänzungsmittel sind kein Ersatz für professionelle ärztliche Beratung.</p>`
                 },
-                shipping: {
-                    title: "Shipping & Returns",
-                    html: `<p>Orders are processed in 1-3 business days. Delivery within EU typically takes 3-14 days. 30-day return policy for unopened items.</p>`
-                },
-                contact: {
-                    title: "Contact Us",
-                    html: `<p>Contact: support@get-evitrol.com or via https://support.evitrol.com/hc/requests/new</p>`
-                }
+                shipping: { title: "Shipping & Returns", html: `<p>Orders are processed in 1-3 business days. Delivery within EU typically takes 3-14 days.</p>` },
+                contact: { title: "Contact Us", html: `<p>Contact: support@get-evitrol.com</p>` }
             };
-            
             document.getElementById('modal-title').innerText = contents[type].title;
             document.getElementById('modal-content-area').innerHTML = contents[type].html;
             modal.classList.remove('hidden');
