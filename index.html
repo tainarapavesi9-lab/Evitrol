@@ -27,27 +27,6 @@
     <link rel="preload" as="image" href="images/evitrol1.png" />
     <link rel="icon" type="image/png" href="images/faviconV2.png" />
 
-    <!-- ================= JSON-LD ================= -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Evitrol",
-      "image": "https://try-evitrol.vercel.app/images/evitrol1.png",
-      "description": "Evitrol is a dietary supplement designed to support metabolism, digestion, and natural energy balance.",
-      "brand": { "@type": "Brand", "name": "Evitrol" },
-      "sku": "EVITROL-30",
-      "offers": {
-        "@type": "Offer",
-        "url": "https://try-evitrol.vercel.app/",
-        "priceCurrency": "EUR",
-        "price": "49.95",
-        "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition"
-      }
-    }
-    </script>
-
     <!-- UI Assets -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -114,7 +93,7 @@
                             The <span class="gradient-text italic">“Metabolic Control”</span> Formula For Lean, Energized Body
                         </h1>
 
-                        <!-- Foto Mobile (Aparece logo após o título no mobile) -->
+                        <!-- Foto Mobile (Após o título) -->
                         <div class="lg:hidden mb-8 flex justify-center">
                             <div class="max-w-[280px] product-shadow rounded-[2.5rem] overflow-hidden bg-white border-4 border-white">
                                 <img src="images/evitrol1.png" alt="Evitrol Metabolism Support" class="w-full h-auto">
@@ -169,7 +148,7 @@
                         </div>
                     </div>
 
-                    <!-- Foto Desktop (Escondida no mobile) -->
+                    <!-- Foto Desktop -->
                     <div class="reveal active delay-300 hidden lg:block">
                         <div class="relative max-w-md mx-auto">
                             <div class="aspect-[4/5] bg-[#174243]/5 rounded-[3rem] overflow-hidden product-shadow border-8 border-white">
@@ -206,13 +185,15 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Rodapé -->
     <footer class="bg-slate-50 py-20 border-t border-slate-200">
         <div class="container mx-auto px-6 text-center">
             <div class="mb-12">
                 <img src="images/download (1).svg" alt="Evitrol" class="h-6 mx-auto mb-6 opacity-40 grayscale">
                 <div class="space-y-2">
                     <p class="text-[10px] font-bold text-slate-800 uppercase tracking-widest">UAB Commerce Core</p>
+                    <!-- Disclaimer de Distribuidor Autorizado Discreto -->
+                    <p class="text-[9px] text-slate-400 uppercase tracking-widest font-bold" data-i18n="authorized_distributor">OFFICIAL AUTHORIZED DISTRIBUTOR</p>
                     <p class="text-[9px] text-slate-400">Savanorių pr. 363, Kaunas, Lithuania | Reg: 302566167</p>
                     <p class="text-[10px] font-bold text-[#174243]">support@get-evitrol.com | +1 (331) 207-9814</p>
                 </div>
@@ -255,7 +236,6 @@
     </div>
 
     <script>
-        // Dicionário de Traduções (i18n)
         const i18n = {
             de: {
                 order_now: "JETZT BESTELLEN",
@@ -273,6 +253,7 @@
                 stat_2: "Naturbasierte Formel",
                 stat_3: "Tägliche Unterstützung",
                 stat_4: "Zufriedene Kunden",
+                authorized_distributor: "OFFIZIELLER AUTORISIERTER DISTRIBUTOR",
                 close_window: "FENSTER SCHLIESSEN"
             },
             fr: {
@@ -291,6 +272,7 @@
                 stat_2: "Formule à Base Naturelle",
                 stat_3: "Soutien Métabolique Quotidien",
                 stat_4: "Clients Satisfaits",
+                authorized_distributor: "DISTRIBUTEUR OFFICIEL AUTORISÉ",
                 close_window: "FERMER LA FENÊTRE"
             }
         };
