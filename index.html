@@ -42,7 +42,11 @@
         }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--brand-bg); color: #334155; scroll-behavior: smooth; overflow-x: hidden; }
         h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
-        .brand-header { background-color: white; border-bottom: 1px solid #f1f5f9; }
+        
+        /* Ajuste do Cabeçalho para Verde com Logo Branca */
+        .brand-header { background-color: var(--brand-primary); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .logo-white { filter: brightness(0) invert(1); }
+
         .hero-section-bg { position: relative; overflow: hidden; min-height: 85vh; display: flex; align-items: center; }
         .hero-overlay-pattern { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(var(--brand-primary) 0.5px, transparent 0.5px); background-size: 40px 40px; opacity: 0.05; z-index: 0; }
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); }
@@ -52,6 +56,7 @@
         .cta-button:hover { transform: translateY(-4px) scale(1.02); background-color: var(--brand-primary-light); }
         .secondary-button { transition: all 0.3s ease; background: white; color: var(--brand-primary); border: 2px solid var(--brand-primary-soft); }
         .secondary-button:hover { background: var(--brand-primary-soft); border-color: var(--brand-primary); }
+        
         .product-shadow { box-shadow: 0 20px 40px -10px rgba(23, 66, 67, 0.15); }
         .gradient-text { color: var(--brand-primary); }
         .modal-open { overflow: hidden; }
@@ -74,12 +79,12 @@
 <body class="antialiased">
 
     <!-- Header -->
-    <header class="brand-header py-4 px-6 md:px-12 sticky top-0 z-50">
+    <header class="brand-header py-4 px-6 md:px-12 sticky top-0 z-50 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <img src="images/download (1).svg" alt="Evitrol Logo" class="h-8 md:h-10 w-auto" onerror="this.outerHTML='<span class=\'font-bold tracking-widest text-slate-800 uppercase text-lg\'>Evitrol</span>'">
+                <img src="images/download (1).svg" alt="Evitrol Logo" class="h-8 md:h-10 w-auto logo-white" onerror="this.outerHTML='<span class=\'font-bold tracking-widest text-white uppercase text-lg\'>Evitrol</span>'">
             </div>
-            <a href="https://www.knownwalk.com/2JCZKZ1X/22J47WQB/" class="hidden md:block bg-[#174243] text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#235d5f] transition-all" data-i18n="order_now">
+            <a href="https://www.knownwalk.com/2JCZKZ1X/22J47WQB/" class="hidden md:block border-2 border-white/30 text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-[#174243] transition-all" data-i18n="order_now">
                 ORDER NOW
             </a>
         </div>
@@ -103,10 +108,10 @@
                             The <span class="gradient-text italic">“Metabolic Control”</span> Formula For Lean, Energized Body
                         </h1>
 
-                        <!-- Foto Mobile (Tamanho Otimizado 340px) -->
+                        <!-- Foto Mobile (Aumentada e sem bordas agressivas) -->
                         <div class="lg:hidden mb-10 flex justify-center">
-                            <div class="w-full max-w-[340px] product-shadow rounded-[3rem] overflow-hidden bg-white border-4 border-white">
-                                <img src="images/evitrol1.png" alt="Evitrol Metabolism Support" class="w-full h-auto">
+                            <div class="w-full max-w-[420px] px-4">
+                                <img src="images/evitrol1.png" alt="Evitrol Metabolism Support" class="w-full h-auto drop-shadow-2xl">
                             </div>
                         </div>
 
@@ -194,7 +199,7 @@
             </div>
         </section>
 
-        <!-- FAQ Section (Efeito Sanfona) -->
+        <!-- FAQ Section -->
         <section class="py-24 bg-white">
             <div class="container max-w-4xl mx-auto px-6">
                 <div class="text-center mb-16">
@@ -238,36 +243,12 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Q4 -->
-                    <div class="faq-item border border-slate-100 rounded-3xl overflow-hidden transition-all hover:border-[#174243]/20">
-                        <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center bg-white group" onclick="toggleFaq(this)">
-                            <span class="font-bold text-slate-800 text-base md:text-lg group-hover:text-[#174243]" data-i18n="faq_q4">How long does it take to notice results?</span>
-                            <i data-lucide="chevron-down" class="chevron-icon w-5 h-5 text-slate-400 group-hover:text-[#174243]"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="px-8 pb-8 text-slate-500 text-sm md:text-base leading-relaxed" data-i18n="faq_a4">
-                                Results may vary depending on individual metabolism and habits. Some users report noticeable changes within a few weeks, while optimal results are typically observed with consistent use over 60–90 days.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Q5 -->
-                    <div class="faq-item border border-slate-100 rounded-3xl overflow-hidden transition-all hover:border-[#174243]/20">
-                        <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center bg-white group" onclick="toggleFaq(this)">
-                            <span class="font-bold text-slate-800 text-base md:text-lg group-hover:text-[#174243]" data-i18n="faq_q5">Does Evitrol help with digestion and bloating?</span>
-                            <i data-lucide="chevron-down" class="chevron-icon w-5 h-5 text-slate-400 group-hover:text-[#174243]"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="px-8 pb-8 text-slate-500 text-sm md:text-base leading-relaxed" data-i18n="faq_a5">
-                                Evitrol includes ingredients traditionally used to support digestion and gut comfort. Many users experience reduced bloating and a lighter feeling as part of their routine.
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Rodapé -->
+    <!-- Footer -->
     <footer class="bg-slate-50 py-20 border-t border-slate-200">
         <div class="container mx-auto px-6 text-center">
             <div class="mb-12">
@@ -330,19 +311,9 @@
                 start_quiz: "STOFFWECHSEL-QUIZ STARTEN",
                 premium_badge: "⭐ PREMIUM STOFFWECHSEL-UNTERSTÜTZUNG",
                 hero_title: 'Die <span class="gradient-text italic">„Metabolic Control“-Formel</span> für einen vitalen Körper',
-                hero_sub: "Ein präzisionsformuliertes tägliches Ergänzungsmittel zur Unterstützung des Stoffwechsels und zur Reduzierung von Heißhunger. Mit der Kraft von <strong>Evitrol</strong>.",
-                benefit_1: "✔ Unterstützt den natürlichen Stoffwechsel",
-                benefit_2: "✔ Hilft bei der Appetitkontrolle",
-                benefit_3: "✔ Fördert tägliche Energie & Wohlbefinden",
-                exclusive_access: "[ EXKLUSIVER ZUGANG ]",
-                available_now: "[ JETZT VERFÜGBAR ]",
-                guarantee_delivery: "90-TAGE-GARANTIE • SCHNELLE LIEFERUNG",
                 stat_1: "Spürbare Körperverbesserung*",
-                stat_2: "Naturbasierte Formel",
-                stat_3: "Tägliche Unterstützung",
-                stat_4: "Zufriedene Kunden",
-                authorized_distributor: "OFFIZIELLER AUTORISIERTER DISTRIBUTOR",
                 faq_title: "Häufig gestellte Fragen",
+                authorized_distributor: "OFFIZIELLER AUTORISIERTER DISTRIBUTOR",
                 close_window: "FENSTER SCHLIESSEN"
             },
             fr: {
@@ -350,19 +321,9 @@
                 start_quiz: "DÉMARRER LE QUIZ MÉTABOLISME",
                 premium_badge: "⭐ SOUTIEN MÉTABOLIQUE PREMIUM",
                 hero_title: 'La Formule <span class="gradient-text italic">“Metabolic Control”</span> pour um Corps Affiné',
-                hero_sub: "Un complément quotidien de précision conçu pour soutenir le métabolisme et réduire les fringales. Propulsé par <strong>Evitrol</strong>.",
-                benefit_1: "✔ Soutient le métabolisme naturel",
-                benefit_2: "✔ Aide à réduire l'appétit incontrôlé",
-                benefit_3: "✔ Favorise l'énergie et l'équilibre quotidien",
-                exclusive_access: "[ ACCÈS EXCLUSIF ]",
-                available_now: "[ DISPONIBLE MAINTENANT ]",
-                guarantee_delivery: "GARANTIE 90 JOURS • LIVRAISON RAPIDE",
                 stat_1: "Amélioration Corporelle Visible*",
-                stat_2: "Formule à Base Naturelle",
-                stat_3: "Soutien Métabolique Quotidien",
-                stat_4: "Clients Satisfaits",
-                authorized_distributor: "DISTRIBUTEUR OFFICIEL AUTORISÉ",
                 faq_title: "Foire aux questions",
+                authorized_distributor: "DISTRIBUTEUR OFFICIEL AUTORISÉ",
                 close_window: "FERMER LA FENÊTRE"
             }
         };
@@ -399,33 +360,20 @@
                     title: "Política de Privacidade", 
                     html: `
                         <p>Última atualização: 24 de outubro de 2025</p>
-                        <p>Esta Política de Privacidade (a “Política”) define as práticas da Haur BV (a “Operadora da Plataforma”, “nós”, “nosso” ou “nossos”) em relação à coleta, uso, divulgação e proteção dos seus dados pessoais como cliente (“você”) no website https://evitrol.com (o “Website”).</p>
+                        <p>Esta Política de Privacidade (a “Política”) define as práticas da Haur BV...</p>
                         <h4>1. Dados pessoais que coletamos</h4>
-                        <p>1.1 Seu nome completo, endereços de entrega e cobrança, número de telefone e endereço de e-mail.</p>
-                        <p>1.2 Informações para processar pagamentos (cartão, transações).</p>
-                        <p>1.3 Histórico de transações e produtos visualizados.</p>
+                        <p>Coletamos nome, endereço, e-mail e dados de transação para processar seus pedidos de forma segura.</p>
                         <h4>2. Como utilizamos seus dados pessoais</h4>
-                        <p>Processamos seus dados para fornecer serviços, processar pagamentos e cumprir obrigações contratuais (Art. 6º, parágrafo 1, alínea b do RGPD).</p>
-                        <h4>3. Como compartilhamos seus dados pessoais</h4>
-                        <p>Compartilhamos com o Vendedor (STR.VERT CONSULTANTS LTD) para entrega e fornecedores de serviços de pagamento seguros.</p>
-                        <h4>4. Seus direitos e opções</h4>
-                        <p>Você tem direito a cópia, correção, exclusão e portabilidade dos seus dados nos termos do RGPD.</p>
-                        <h4>11. Informações de contato</h4>
-                        <p>https://support.evitrol.com/hc/requests/new</p>
+                        <p>Processamos seus dados para fornecer serviços, processar pagamentos e cumprir obrigações contratuais.</p>
                     `
                 },
                 terms: { 
                     title: "Nutzungsbedingungen", 
                     html: `
                         <p>Zuletzt aktualisiert: 24. Oktober 2025</p>
-                        <p>Diese Bedingungen regeln Ihre Nutzung von Haur B.V. (RSIN: 867612939, John M. Keynesplein 1, Amsterdam).</p>
-                        <h4>1. Allgemeines</h4>
-                        <p>1.1 Definitionen: Plattformbetreiber ist Haur B.V. Verkäufer ist STR.VERT CONSULTANTS LTD (Zypern).</p>
-                        <p>1.5 Der Plattformbetreiber fungiert ausschließlich als Vermittler zwischen Benutzer und Verkäufer.</p>
+                        <p>Diese Bedingungen regeln Ihre Nutzung von Haur B.V. (Amsterdam).</p>
                         <h4>3. Keine Medizinische Beratung</h4>
-                        <p>Die Website bietet keine medizinische Beratung, Diagnose oder Behandlung. Nahrungsergänzungsmittel sind kein Ersatz für professionelle ärztliche Beratung.</p>
-                        <h4>8. Rücksendungen und Rückerstattungen</h4>
-                        <p>Ein Rückgaberecht besteht innerhalb von dreißig (30) Kalendertagen ab Lieferdatum, sofern Produkte ungeöffnet und originalverpackt sind.</p>
+                        <p>Nahrungsergänzungsmittel sind kein Ersatz für professionelle ärztliche Beratung.</p>
                     `
                 },
                 shipping: {
@@ -434,7 +382,7 @@
                 },
                 contact: {
                     title: "Contact Us",
-                    html: `<p>For questions regarding your order or our terms, please contact: support@get-evitrol.com or via our support portal: https://support.evitrol.com/hc/requests/new</p>`
+                    html: `<p>Contact: support@get-evitrol.com or via https://support.evitrol.com/hc/requests/new</p>`
                 }
             };
             
