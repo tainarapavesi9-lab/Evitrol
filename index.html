@@ -1,15 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ================= SEO CORE ================= -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Evitrol™ Metabolism Support | Natural Weight Balance & Energy Formula</title>
+    <meta name="description" content="Evitrol™ supports metabolism, digestion, and natural energy. Designed for daily use to help maintain weight balance and reduce cravings. Fast delivery across Europe." />
+    <meta name="keywords" content="Evitrol, metabolism support, weight balance supplement, fat burn support, digestion support, natural energy, appetite control, EU supplement, detox support, metabolic balance" />
+    <link rel="canonical" href="https://try-evitrol.vercel.app/" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    
-    <title>Evitrol Official | The Precision Age-Control Formula</title>
-    <meta name="description" content="Precision-formulated serum to deeply hydrate, refine visible signs of aging, and restore skin clarity. Powered by Evitrol." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#0f3d2e" />
 
-    <!-- FAVICON -->
-    <link rel="icon" type="image/png" href="images/faviconV2.png">
+    <!-- ================= OPEN GRAPH ================= -->
+    <meta property="og:title" content="Evitrol™ | Natural Metabolism & Weight Support" />
+    <meta property="og:description" content="Support your metabolism, reduce cravings, and improve daily energy with Evitrol™. Trusted by thousands across Europe." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://try-evitrol.vercel.app/" />
+    <meta property="og:image" content="https://try-evitrol.vercel.app/images/product.png" />
+    <meta property="og:site_name" content="Evitrol" />
+
+    <!-- ================= PERFORMANCE ================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    <link rel="preload" as="image" href="images/evitrol1.png" />
+    <link rel="icon" type="image/png" href="images/faviconV2.png" />
+
+    <!-- ================= JSON-LD ================= -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Evitrol",
+      "image": "https://try-evitrol.vercel.app/images/product.png",
+      "description": "Evitrol is a dietary supplement designed to support metabolism, digestion, and natural energy balance.",
+      "brand": { "@type": "Brand", "name": "Evitrol" },
+      "sku": "EVITROL-30",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://try-evitrol.vercel.app/",
+        "priceCurrency": "EUR",
+        "price": "49.95",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does it take to see results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Results vary depending on individual metabolism and lifestyle. Many users report noticeable changes within a few weeks of consistent use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there any side effects?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evitrol is formulated with natural ingredients. However, consult your doctor before use if you are pregnant, nursing, or taking medication."
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- UI Assets -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,66 +90,21 @@
             --brand-dark: #0f172a;
             --brand-bg: #FCFAFA;
         }
-
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: var(--brand-bg); 
-            color: #334155;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--brand-bg); color: #334155; scroll-behavior: smooth; overflow-x: hidden; }
         h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
-
         .brand-header { background-color: white; border-bottom: 1px solid #f1f5f9; }
-        
-        .hero-section-bg { 
-            position: relative; 
-            overflow: hidden; 
-            min-height: 90vh; 
-            display: flex; 
-            align-items: center; 
-        }
-
-        .hero-overlay-pattern {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: radial-gradient(var(--brand-primary) 0.5px, transparent 0.5px);
-            background-size: 40px 40px;
-            opacity: 0.05; z-index: 0;
-        }
-
+        .hero-section-bg { position: relative; overflow: hidden; min-height: 90vh; display: flex; align-items: center; }
+        .hero-overlay-pattern { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(var(--brand-primary) 0.5px, transparent 0.5px); background-size: 40px 40px; opacity: 0.05; z-index: 0; }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.2, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        
-        .cta-card {
-            background: white; border-radius: 1.5rem;
-            box-shadow: 0 25px 50px -12px rgba(23, 66, 67, 0.08);
-            border: 1px solid #f1f5f9;
-        }
-
-        .cta-button {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            background-color: var(--brand-primary);
-            color: white;
-            box-shadow: 0 10px 20px -5px rgba(23, 66, 67, 0.3);
-        }
+        .cta-card { background: white; border-radius: 1.5rem; box-shadow: 0 25px 50px -12px rgba(23, 66, 67, 0.08); border: 1px solid #f1f5f9; }
+        .cta-button { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); background-color: var(--brand-primary); color: white; box-shadow: 0 10px 20px -5px rgba(23, 66, 67, 0.3); }
         .cta-button:hover { transform: translateY(-4px) scale(1.02); background-color: var(--brand-primary-light); }
-
-        .secondary-button {
-            transition: all 0.3s ease;
-            background: white;
-            color: var(--brand-primary);
-            border: 2px solid var(--brand-primary-soft);
-        }
+        .secondary-button { transition: all 0.3s ease; background: white; color: var(--brand-primary); border: 2px solid var(--brand-primary-soft); }
         .secondary-button:hover { background: var(--brand-primary-soft); border-color: var(--brand-primary); }
-
-        .product-shadow {
-            box-shadow: 0 30px 60px -12px rgba(23, 66, 67, 0.2);
-        }
-
+        .product-shadow { box-shadow: 0 30px 60px -12px rgba(23, 66, 67, 0.2); }
         .gradient-text { color: var(--brand-primary); }
         .modal-open { overflow: hidden; }
-
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
@@ -92,11 +113,11 @@
 </head>
 <body class="antialiased">
 
-    <!-- Cabeçalho -->
+    <!-- Header -->
     <header class="brand-header py-4 px-6 md:px-12 sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <img src="images/download (1).svg" alt="Evitrol Logo" class="h-8 md:h-10 w-auto" onerror="this.outerHTML='<div class=\'w-8 h-8 bg-[#174243] rounded-full flex items-center justify-center\'><span class=\'text-white font-bold text-xs\'>E</span></div><span class=\'font-bold tracking-widest text-slate-800 uppercase text-lg ml-2\'>Evitrol</span>'">
+                <img src="images/download (1).svg" alt="Evitrol Logo" class="h-8 md:h-10 w-auto" onerror="this.outerHTML='<span class=\'font-bold tracking-widest text-slate-800 uppercase text-lg\'>Evitrol</span>'">
             </div>
             <a href="https://www.knownwalk.com/2JCZKZ1X/22J47WQB/" class="hidden md:block bg-[#174243] text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#235d5f] transition-all" data-i18n="order_now">
                 ORDER NOW
@@ -105,14 +126,13 @@
     </header>
 
     <main>
-        <!-- Seção Hero -->
+        <!-- Hero Section -->
         <section id="hero" class="hero-section-bg">
             <div class="hero-overlay-pattern"></div>
             
             <div class="container mx-auto px-6 py-12 md:py-24 relative z-10">
                 <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     
-                    <!-- Lado Esquerdo: Conteúdo Estratégico -->
                     <div class="reveal active text-center lg:text-left order-2 lg:order-1">
                         <div class="inline-flex items-center gap-2 bg-[#174243]/5 px-4 py-1.5 rounded-full mb-6 border border-[#174243]/10">
                             <span class="text-[10px] font-black uppercase tracking-widest text-[#174243]" data-i18n="premium_badge">⭐ PREMIUM SKIN SOLUTION</span>
@@ -125,7 +145,6 @@
                             A precision-formulated serum designed to deeply hydrate, refine visible signs of aging, and restore your skin’s natural clarity — without aggressive treatments or unrealistic routines. Powered by <strong>Evitrol</strong>, this is daily skin discipline made simple.
                         </p>
 
-                        <!-- Benefícios Baseados no Modelo -->
                         <div class="space-y-4 mb-10 inline-block text-left">
                             <div class="flex items-center gap-3">
                                 <div class="w-6 h-6 rounded-full bg-[#174243]/10 flex items-center justify-center shrink-0">
@@ -147,7 +166,6 @@
                             </div>
                         </div>
 
-                        <!-- Card de CTA Personalizado -->
                         <div class="cta-card p-6 md:p-8 border-t-4 border-[#174243] max-w-md mx-auto lg:mx-0">
                             <div class="flex items-center justify-between mb-6">
                                 <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest" data-i18n="exclusive_access">[ EXCLUSIVE ACCESS ]</span>
@@ -169,14 +187,10 @@
                         </div>
                     </div>
 
-                    <!-- Lado Direito: Nova Imagem da Primeira Sessão -->
                     <div class="reveal active delay-300 order-1 lg:order-2">
                         <div class="relative max-w-md mx-auto">
                             <div class="aspect-[4/5] bg-[#174243]/5 rounded-[3rem] overflow-hidden product-shadow border-8 border-white">
-                                <img src="images/evitrol1.png" 
-                                     alt="Evitrol Premium Serum" 
-                                     class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                                     onerror="this.src='https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1000&auto=format&fit=crop'">
+                                <img src="images/evitrol1.png" alt="Evitrol Premium Formula" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
                             </div>
                         </div>
                     </div>
@@ -184,7 +198,7 @@
             </div>
         </section>
 
-        <!-- Faixa de Estatísticas -->
+        <!-- Stats Section -->
         <section class="bg-[#174243] py-16">
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto text-white">
@@ -208,7 +222,7 @@
             </div>
         </section>
 
-        <!-- Seção Ciência -->
+        <!-- Science Section -->
         <section class="py-24 bg-white">
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto text-center reveal">
@@ -217,15 +231,15 @@
                     <p class="text-slate-500 text-lg mb-12" data-i18n="science_sub">It’s a targeted formula designed to support your skin at a deeper level — helping it retain moisture, improve elasticity, and resist visible aging over time.</p>
                     
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="p-8 rounded-3xl bg-[#174243]/5 border border-[#174243]/10 transition-all hover:shadow-lg">
+                        <div class="p-8 rounded-3xl bg-[#174243]/5 border border-[#174243]/10">
                             <h3 class="text-xl font-bold mb-3" data-i18n="ing_1_title">Hyaluronic Acid</h3>
                             <p class="text-sm text-slate-500 leading-relaxed" data-i18n="ing_1_desc">Multi-layer hydration that penetrates deeply to lock in moisture and restore a plump, smooth appearance.</p>
                         </div>
-                        <div class="p-8 rounded-3xl bg-[#174243]/5 border border-[#174243]/10 transition-all hover:shadow-lg">
+                        <div class="p-8 rounded-3xl bg-[#174243]/5 border border-[#174243]/10">
                             <h3 class="text-xl font-bold mb-3" data-i18n="ing_2_title">Collagen Peptides</h3>
                             <p class="text-sm text-slate-500 leading-relaxed" data-i18n="ing_2_desc">Supports skin structure and firmness, helping reduce the appearance of fine lines and loss of elasticity.</p>
                         </div>
-                        <div class="p-8 rounded-3xl bg-[#174243]/5 border border-[#174243]/10 transition-all hover:shadow-lg">
+                        <div class="p-8 rounded-3xl bg-[#174243]/5 border border-[#174243]/10">
                             <h3 class="text-xl font-bold mb-3" data-i18n="ing_3_title">Vitamin C+</h3>
                             <p class="text-sm text-slate-500 leading-relaxed" data-i18n="ing_3_desc">Powerful antioxidant protection to brighten skin tone and defend against environmental stressors.</p>
                         </div>
@@ -235,7 +249,7 @@
         </section>
     </main>
 
-    <!-- Rodapé -->
+    <!-- Footer -->
     <footer class="bg-slate-50 py-20 border-t border-slate-200">
         <div class="container mx-auto px-6 text-center">
             <div class="mb-12">
@@ -256,13 +270,13 @@
 
             <div class="max-w-4xl mx-auto text-[9px] leading-relaxed text-slate-400 space-y-4 pt-10 border-t border-slate-200">
                 <p data-i18n="disc_1">Disclaimer: This site is not a part of the Google™ or Meta Inc. website. Additionally, this site is NOT endorsed by Google™ or Meta Inc. in any way.</p>
-                <p data-i18n="disc_2">Evitrol is a cosmetic serum. The statements on this website have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary based on unique skin conditions.</p>
+                <p data-i18n="disc_2">Evitrol is a cosmetic supplement. The statements on this website have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
                 <p class="font-bold text-slate-500 uppercase tracking-[0.2em] pt-4">&copy; 2026 EVITROL SKINCARE. ALL RIGHTS RESERVED.</p>
             </div>
         </div>
     </footer>
 
-    <!-- MODAL -->
+    <!-- Modal System -->
     <div id="policy-modal" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true">
         <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-md" onclick="closeModal()"></div>
         <div class="fixed inset-0 z-10 overflow-y-auto">
@@ -284,78 +298,48 @@
     </div>
 
     <script>
-        // Dicionário de Traduções Estratégico
         const i18n = {
             de: {
                 order_now: "JETZT BESTELLEN",
                 start_quiz: "SKIN-QUIZ STARTEN",
-                premium_badge: "⭐ PREMIUM HAUTLÖSUNG",
-                hero_title: 'Die <span class="gradient-text italic">„Age-Control“-Formel</span> für straffe, strahlende Haut',
-                hero_sub: "Ein präzisionsformuliertes Serum zur Tiefenhydratisierung, Verfeinerung von Altersanzeichen und Wiederherstellung der natürlichen Klarheit – ohne aggressive Behandlungen. Mit der Kraft von <strong>Evitrol</strong>, tägliche Hautdisziplin ganz einfach.",
-                benefit_1: "✔ Tiefenhydratation, die den ganzen Tag hält",
-                benefit_2: "✔ Reduziert sichtbar feine Linien und Müdigkeitserscheinungen",
-                benefit_3: "✔ Verbessert Hautstruktur, Tonus und Ausstrahlung",
+                premium_badge: "⭐ PREMIUM LÖSUNG",
+                hero_title: 'Die <span class="gradient-text italic">„Stoffwechsel“-Formel</span> für Energie & Balance',
+                hero_sub: "Ein Präzisionsserum zur Unterstützung von Stoffwechsel, Verdauung und natürlicher Energie. Mit der Kraft von <strong>Evitrol</strong>, tägliche Balance ganz einfach.",
+                benefit_1: "✔ Tiefe Hydratation für den Stoffwechsel",
+                benefit_2: "✔ Reduziert Heißhunger & Müdigkeit",
+                benefit_3: "✔ Verbessert natürliche Energie & Vitalität",
                 exclusive_access: "[ EXKLUSIVER ZUGANG ]",
                 available_now: "[ JETZT VERFÜGBAR ]",
                 guarantee_delivery: "90-TAGE-GARANTIE • SCHNELLE LIEFERUNG",
-                stat_1: "Sichtbare Hautverbesserung*",
+                stat_1: "Sichtbare Verbesserung*",
                 stat_2: "Vegan & Tierversuchsfrei",
-                stat_3: "Langanhaltende Feuchtigkeit",
+                stat_3: "Langanhaltende Wirkung",
                 stat_4: "Zufriedene Kunden",
                 science_title: "Die Wissenschaft von Evitrol",
-                science_sub_h: "Das ist nicht nur Hautpflege.",
-                science_sub: "Es ist eine gezielte Formel, die Ihre Haut auf einer tieferen Ebene unterstützt und ihr hilft, Feuchtigkeit zu speichern.",
-                link_shipping: "Versand & Rückgabe",
-                close_window: "FENSTER SCHLIESSEN"
+                science_sub_h: "Das ist nicht nur Pflege.",
+                science_sub: "Es ist eine gezielte Formel zur Unterstützung Ihres Stoffwechsels.",
+                close_window: "SCHLIESSEN"
             },
             fr: {
                 order_now: "COMMANDER MAINTENANT",
-                start_quiz: "DÉMARRER LE QUIZ PEAU",
-                premium_badge: "⭐ SOLUTION PEAU PREMIUM",
-                hero_title: 'La Formule <span class="gradient-text italic">“Age-Control”</span> pour une Peau Ferme et Lumineuse',
-                hero_sub: "Un sérum de précision conçu pour hydrater en profondeur, affiner les signes de l'âge et restaurer la clarté naturelle de votre peau. Propulsé par <strong>Evitrol</strong>, la discipline cutanée quotidienne simplifiée.",
-                benefit_1: "✔ Hydratation profonde qui dure toute la journée",
-                benefit_2: "✔ Réduit visiblement les ridules et les signes de fatigue",
-                benefit_3: "✔ Améliore le grain, le ton et l'éclat de la peau",
+                start_quiz: "DÉMARRER LE QUIZ",
+                premium_badge: "⭐ SOLUTION PREMIUM",
+                hero_title: 'La Formule <span class="gradient-text italic">“Métabolisme”</span> pour Énergie & Équilibre',
+                hero_sub: "Un sérum de précision conçu pour soutenir le métabolisme, la digestion et l'énergie naturelle. Propulsé par <strong>Evitrol</strong>, la discipline quotidienne simplifiée.",
+                benefit_1: "✔ Hydratation profonde toute la journée",
+                benefit_2: "✔ Réduit les fringales et les signes de fatigue",
+                benefit_3: "✔ Améliore l'énergie et l'éclat naturel",
                 exclusive_access: "[ ACCÈS EXCLUSIF ]",
                 available_now: "[ DISPONIBLE MAINTENANT ]",
                 guarantee_delivery: "GARANTIE 90 JOURS • LIVRAISON RAPIDE",
-                stat_1: "Amélioration Cutanée Visible*",
+                stat_1: "Amélioration Visible*",
                 stat_2: "Vegan & Sans Cruauté",
-                stat_3: "Hydratation Longue Durée",
+                stat_3: "Efficacité Longue Durée",
                 stat_4: "Clients Satisfaits",
                 science_title: "La Science d'Evitrol",
                 science_sub_h: "Ce n'est pas seulement un soin.",
-                science_sub: "C'est une formule ciblée conçue pour soutenir votre peau en profondeur — l'aidant à retenir l'humidité et à améliorer son élasticité.",
-                link_shipping: "Livraison & Retours",
-                close_window: "FERMER LA FENÊTRE"
-            },
-            da: {
-                order_now: "BESTIL NU",
-                start_quiz: "START HUD-QUIZ",
-                premium_badge: "⭐ PREMIUM HUDLØSNING",
-                hero_title: 'Den <span class="gradient-text italic">"Age-Control"</span> formel for fast og strålende hud',
-                stat_1: "Mærkbar hudforbedring*",
-                guarantee_delivery: "90 DAGES GARANTI • HURTIG LEVERING",
-                close_window: "LUK VINDUET"
-            },
-            sv: {
-                order_now: "BESTÄLL NU",
-                start_quiz: "STARTA HUD-QUIZ",
-                premium_badge: "⭐ PREMIUM HUDVÅRD",
-                hero_title: 'Den <span class="gradient-text italic">"Age-Control"</span> formeln för fast och strålande hy',
-                stat_1: "Märkbar hudförbättring*",
-                guarantee_delivery: "90 DAGARS GARANTI • SNABB LEVERANS",
-                close_window: "STÄNG FÖNSTRET"
-            },
-            fi: {
-                order_now: "TILAA NYT",
-                start_quiz: "ALOITA IHO-QUIZ",
-                premium_badge: "⭐ PREMIUM-IHOHOITO",
-                hero_title: 'Nuorekkuutta palauttava <span class="gradient-text italic">"Age-Control"</span> seerumi',
-                stat_1: "Huomattava ihon parannus*",
-                guarantee_delivery: "90 PÄIVÄN TAKUU • NOPEA TOIMITUS",
-                close_window: "SULJE IKKUNA"
+                science_sub: "C'est une formule ciblée conçue para soutenir votre métabolisme.",
+                close_window: "FERMER"
             }
         };
 
@@ -374,7 +358,6 @@
         window.addEventListener('DOMContentLoaded', () => {
             translateContent();
             lucide.createIcons();
-            
             const reveals = document.querySelectorAll(".reveal");
             const revealElements = () => {
                 reveals.forEach(el => {
@@ -389,9 +372,9 @@
         function openModal(type) {
             const data = {
                 shipping: { title: "Shipping & Returns", content: "Orders processed in 24h. Standard EU delivery 3-7 days. 90-day guarantee active." },
-                terms: { title: "Terms of Service", content: "Evitrol is for topical cosmetic use. No resale permitted." },
+                terms: { title: "Terms of Service", content: "Evitrol is for daily supplement use. No resale permitted." },
                 privacy: { title: "Privacy Policy", content: "We use banking-level SSL encryption for all transactions." },
-                contact: { title: "Contact Us", content: "Email: support@get-evitrol.com | Official UAB Commerce Core Support." }
+                contact: { title: "Contact Information", content: "Email: support@get-evitrol.com | Official UAB Commerce Core Support." }
             };
             document.getElementById('modal-title').innerText = data[type].title;
             document.getElementById('modal-content-area').innerText = data[type].content;
