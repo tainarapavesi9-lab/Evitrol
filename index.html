@@ -58,9 +58,12 @@
 
         /* FAQ Accordion Transitions */
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-        .faq-item.active .faq-answer { max-height: 500px; transition: max-height 0.5s ease-in; }
+        .faq-item.active .faq-answer { max-height: 600px; transition: max-height 0.5s ease-in; }
         .faq-item.active .chevron-icon { transform: rotate(180deg); }
         .chevron-icon { transition: transform 0.3s ease; }
+
+        .legal-content h4 { font-weight: bold; margin-top: 1rem; color: #174243; }
+        .legal-content p { margin-bottom: 0.75rem; font-size: 0.85rem; }
 
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
@@ -100,7 +103,7 @@
                             The <span class="gradient-text italic">“Metabolic Control”</span> Formula For Lean, Energized Body
                         </h1>
 
-                        <!-- Foto Mobile (Alinhada e com tamanho otimizado) -->
+                        <!-- Foto Mobile (Tamanho Otimizado 340px) -->
                         <div class="lg:hidden mb-10 flex justify-center">
                             <div class="w-full max-w-[340px] product-shadow rounded-[3rem] overflow-hidden bg-white border-4 border-white">
                                 <img src="images/evitrol1.png" alt="Evitrol Metabolism Support" class="w-full h-auto">
@@ -198,7 +201,7 @@
                     <h2 class="text-3xl md:text-5xl font-bold text-slate-900 italic" data-i18n="faq_title">Frequently Asked Questions</h2>
                 </div>
                 
-                <div class="space-y-4">
+                <div class="space-y-4" id="faq-container">
                     <!-- Q1 -->
                     <div class="faq-item border border-slate-100 rounded-3xl overflow-hidden transition-all hover:border-[#174243]/20">
                         <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center bg-white group" onclick="toggleFaq(this)">
@@ -259,30 +262,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Q6 -->
-                    <div class="faq-item border border-slate-100 rounded-3xl overflow-hidden transition-all hover:border-[#174243]/20">
-                        <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center bg-white group" onclick="toggleFaq(this)">
-                            <span class="font-bold text-slate-800 text-base md:text-lg group-hover:text-[#174243]" data-i18n="faq_q6">What makes Evitrol different from other metabolism supplements?</span>
-                            <i data-lucide="chevron-down" class="chevron-icon w-5 h-5 text-slate-400 group-hover:text-[#174243]"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="px-8 pb-8 text-slate-500 text-sm md:text-base leading-relaxed" data-i18n="faq_a6">
-                                Unlike stimulant-heavy products, Evitrol focuses on supporting your body’s natural processes. The formula is designed for consistent use without aggressive ingredients or extreme approaches.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Q7 -->
-                    <div class="faq-item border border-slate-100 rounded-3xl overflow-hidden transition-all hover:border-[#174243]/20">
-                        <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center bg-white group" onclick="toggleFaq(this)">
-                            <span class="font-bold text-slate-800 text-base md:text-lg group-hover:text-[#174243]" data-i18n="faq_q7">Who is Evitrol designed for?</span>
-                            <i data-lucide="chevron-down" class="chevron-icon w-5 h-5 text-slate-400 group-hover:text-[#174243]"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <div class="px-8 pb-8 text-slate-500 text-sm md:text-base leading-relaxed" data-i18n="faq_a7">
-                                Evitrol is suitable for adults looking to support metabolism, improve daily energy, and maintain a balanced weight in a sustainable way.
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -321,14 +300,14 @@
         <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-md" onclick="closeModal()"></div>
         <div class="fixed inset-0 z-10 overflow-y-auto">
             <div class="flex min-h-full items-center justify-center p-4">
-                <div class="relative w-full max-w-2xl bg-white rounded-[2.5rem] shadow-2xl overflow-hidden">
+                <div class="relative w-full max-w-4xl bg-white rounded-[2.5rem] shadow-2xl overflow-hidden">
                     <div class="px-8 py-6 border-b border-slate-50 flex justify-between items-center bg-slate-50/50">
                         <h3 class="font-black text-slate-800 uppercase tracking-[0.2em] text-xs" id="modal-title">Official Information</h3>
                         <button onclick="closeModal()" class="p-2 hover:bg-slate-100 rounded-full transition-colors text-slate-400">
                             <i data-lucide="x" class="w-5 h-5"></i>
                         </button>
                     </div>
-                    <div class="p-10 md:p-12 overflow-y-auto max-h-[60vh] text-sm text-slate-600 leading-relaxed" id="modal-content-area"></div>
+                    <div class="p-10 md:p-12 overflow-y-auto max-h-[65vh] text-sm text-slate-600 leading-relaxed legal-content" id="modal-content-area"></div>
                     <div class="px-8 py-6 bg-slate-50 border-t border-slate-100 flex justify-center">
                         <button onclick="closeModal()" class="bg-[#174243] text-white px-10 py-3 rounded-xl text-[10px] font-bold uppercase tracking-widest shadow-xl" data-i18n="close_window">Close Window</button>
                     </div>
@@ -338,21 +317,13 @@
     </div>
 
     <script>
-        // FAQ Toggle Logic
         function toggleFaq(button) {
             const item = button.parentElement;
             const isActive = item.classList.contains('active');
-            
-            // Close all items
             document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-            
-            // If not active before, open it
-            if (!isActive) {
-                item.classList.add('active');
-            }
+            if (!isActive) item.classList.add('active');
         }
 
-        // Translation Dictionary
         const i18n = {
             de: {
                 order_now: "JETZT BESTELLEN",
@@ -370,8 +341,8 @@
                 stat_2: "Naturbasierte Formel",
                 stat_3: "Tägliche Unterstützung",
                 stat_4: "Zufriedene Kunden",
-                faq_title: "Häufig gestellte Fragen",
                 authorized_distributor: "OFFIZIELLER AUTORISIERTER DISTRIBUTOR",
+                faq_title: "Häufig gestellte Fragen",
                 close_window: "FENSTER SCHLIESSEN"
             },
             fr: {
@@ -390,8 +361,8 @@
                 stat_2: "Formule à Base Naturelle",
                 stat_3: "Soutien Métabolique Quotidien",
                 stat_4: "Clients Satisfaits",
-                faq_title: "Foire aux questions",
                 authorized_distributor: "DISTRIBUTEUR OFFICIEL AUTORISÉ",
+                faq_title: "Foire aux questions",
                 close_window: "FERMER LA FENÊTRE"
             }
         };
@@ -423,14 +394,52 @@
 
         const modal = document.getElementById('policy-modal');
         function openModal(type) {
-            const data = {
-                shipping: { title: "Shipping & Returns", content: "Orders processed in 24h. Standard EU delivery 3-7 days. 90-day guarantee active." },
-                terms: { title: "Terms of Service", content: "Evitrol is a dietary supplement. Please consult a physician before use." },
-                privacy: { title: "Privacy Policy", content: "Your data is secured with banking-level encryption." },
-                contact: { title: "Contact Us", content: "Email: support@get-evitrol.com" }
+            const contents = {
+                privacy: { 
+                    title: "Política de Privacidade", 
+                    html: `
+                        <p>Última atualização: 24 de outubro de 2025</p>
+                        <p>Esta Política de Privacidade (a “Política”) define as práticas da Haur BV (a “Operadora da Plataforma”, “nós”, “nosso” ou “nossos”) em relação à coleta, uso, divulgação e proteção dos seus dados pessoais como cliente (“você”) no website https://evitrol.com (o “Website”).</p>
+                        <h4>1. Dados pessoais que coletamos</h4>
+                        <p>1.1 Seu nome completo, endereços de entrega e cobrança, número de telefone e endereço de e-mail.</p>
+                        <p>1.2 Informações para processar pagamentos (cartão, transações).</p>
+                        <p>1.3 Histórico de transações e produtos visualizados.</p>
+                        <h4>2. Como utilizamos seus dados pessoais</h4>
+                        <p>Processamos seus dados para fornecer serviços, processar pagamentos e cumprir obrigações contratuais (Art. 6º, parágrafo 1, alínea b do RGPD).</p>
+                        <h4>3. Como compartilhamos seus dados pessoais</h4>
+                        <p>Compartilhamos com o Vendedor (STR.VERT CONSULTANTS LTD) para entrega e fornecedores de serviços de pagamento seguros.</p>
+                        <h4>4. Seus direitos e opções</h4>
+                        <p>Você tem direito a cópia, correção, exclusão e portabilidade dos seus dados nos termos do RGPD.</p>
+                        <h4>11. Informações de contato</h4>
+                        <p>https://support.evitrol.com/hc/requests/new</p>
+                    `
+                },
+                terms: { 
+                    title: "Nutzungsbedingungen", 
+                    html: `
+                        <p>Zuletzt aktualisiert: 24. Oktober 2025</p>
+                        <p>Diese Bedingungen regeln Ihre Nutzung von Haur B.V. (RSIN: 867612939, John M. Keynesplein 1, Amsterdam).</p>
+                        <h4>1. Allgemeines</h4>
+                        <p>1.1 Definitionen: Plattformbetreiber ist Haur B.V. Verkäufer ist STR.VERT CONSULTANTS LTD (Zypern).</p>
+                        <p>1.5 Der Plattformbetreiber fungiert ausschließlich als Vermittler zwischen Benutzer und Verkäufer.</p>
+                        <h4>3. Keine Medizinische Beratung</h4>
+                        <p>Die Website bietet keine medizinische Beratung, Diagnose oder Behandlung. Nahrungsergänzungsmittel sind kein Ersatz für professionelle ärztliche Beratung.</p>
+                        <h4>8. Rücksendungen und Rückerstattungen</h4>
+                        <p>Ein Rückgaberecht besteht innerhalb von dreißig (30) Kalendertagen ab Lieferdatum, sofern Produkte ungeöffnet und originalverpackt sind.</p>
+                    `
+                },
+                shipping: {
+                    title: "Shipping & Returns",
+                    html: `<p>Orders are processed in 1-3 business days. Delivery within EU typically takes 3-14 days. 30-day return policy for unopened items.</p>`
+                },
+                contact: {
+                    title: "Contact Us",
+                    html: `<p>For questions regarding your order or our terms, please contact: support@get-evitrol.com or via our support portal: https://support.evitrol.com/hc/requests/new</p>`
+                }
             };
-            document.getElementById('modal-title').innerText = data[type].title;
-            document.getElementById('modal-content-area').innerText = data[type].content;
+            
+            document.getElementById('modal-title').innerText = contents[type].title;
+            document.getElementById('modal-content-area').innerHTML = contents[type].html;
             modal.classList.remove('hidden');
             document.body.classList.add('modal-open');
         }
