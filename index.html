@@ -13,6 +13,9 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="theme-color" content="#174243" />
 
+    <!-- TRACKING SCRIPT -->
+    <script src="https://cdn.raldoeira.com/code/8300-f7a70a6f-745d-4454-869d-8209b01e14f3"></script>
+
     <!-- ================= OPEN GRAPH ================= -->
     <meta property="og:title" content="Evitrol™ | Natural Metabolism & Weight Support" />
     <meta property="og:description" content="Support your metabolism, reduce cravings, and improve daily energy with Evitrol™. Trusted by thousands across Europe." />
@@ -32,6 +35,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- ================= JSON-LD ================= -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Evitrol",
+      "image": "https://try-evitrol.vercel.app/images/evitrol1.png",
+      "description": "Evitrol is a dietary supplement designed to support metabolism, digestion, and natural energy balance.",
+      "brand": { "@type": "Brand", "name": "Evitrol" },
+      "sku": "EVITROL-30",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://try-evitrol.vercel.app/",
+        "priceCurrency": "EUR",
+        "price": "49.95",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition"
+      }
+    }
+    </script>
+
     <style>
         :root {
             --brand-primary: #174243;
@@ -44,7 +68,7 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--brand-bg); color: #334155; scroll-behavior: smooth; overflow-x: hidden; }
         h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
         
-        /* Cabeçalho Verde com Logo Branca */
+        /* Header Premium */
         .brand-header { background-color: var(--brand-primary); border-bottom: 1px solid rgba(255,255,255,0.1); }
         .logo-white { filter: brightness(0) invert(1); }
 
@@ -53,10 +77,30 @@
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
         .cta-card { background: white; border-radius: 1.5rem; box-shadow: 0 25px 50px -12px rgba(23, 66, 67, 0.08); border: 1px solid #f1f5f9; }
-        .cta-button { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); background-color: var(--brand-primary); color: white; box-shadow: 0 10px 20px -5px rgba(23, 66, 67, 0.3); }
-        .cta-button:hover { transform: translateY(-4px) scale(1.02); background-color: var(--brand-primary-light); }
-        .secondary-button { transition: all 0.3s ease; background: white; color: var(--brand-primary); border: 2px solid var(--brand-primary-soft); }
-        .secondary-button:hover { background: var(--brand-primary-soft); border-color: var(--brand-primary); }
+        
+        /* Animação de Pulso Suave (Compliance Google Ads) */
+        @keyframes pulse-subtle {
+            0% { transform: scale(1); box-shadow: 0 10px 20px -5px rgba(23, 66, 67, 0.3); }
+            50% { transform: scale(1.02); box-shadow: 0 15px 25px -5px rgba(23, 66, 67, 0.4); }
+            100% { transform: scale(1); box-shadow: 0 10px 20px -5px rgba(23, 66, 67, 0.3); }
+        }
+
+        .cta-button {
+            transition: all 0.3s ease;
+            background-color: var(--brand-primary);
+            color: white;
+            animation: pulse-subtle 3s infinite ease-in-out;
+        }
+        .cta-button:hover { transform: translateY(-2px); background-color: var(--brand-primary-light); animation: none; }
+
+        /* Botão de Quiz com Borda Reforçada */
+        .secondary-button {
+            transition: all 0.3s ease;
+            background: white;
+            color: var(--brand-primary);
+            border: 2px solid var(--brand-primary); /* Borda mais forte para visibilidade */
+        }
+        .secondary-button:hover { background: var(--brand-primary); color: white; }
         
         .product-shadow { box-shadow: 0 20px 40px -10px rgba(23, 66, 67, 0.15); }
         .gradient-text { color: var(--brand-primary); }
@@ -99,7 +143,6 @@
             <div class="container mx-auto px-6 py-8 md:py-20 relative z-10">
                 <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
                     
-                    <!-- Coluna de Conteúdo -->
                     <div class="reveal active text-center lg:text-left">
                         <div class="inline-flex items-center gap-2 bg-[#174243]/5 px-4 py-1.5 rounded-full mb-6 border border-[#174243]/10">
                             <span class="text-[10px] font-black uppercase tracking-widest text-[#174243]" data-i18n="premium_badge">⭐ PREMIUM METABOLIC SUPPORT</span>
@@ -109,7 +152,7 @@
                             The <span class="gradient-text italic">“Metabolic Control”</span> Formula For Lean, Energized Body
                         </h1>
 
-                        <!-- Foto Mobile (Destaque logo após o título) -->
+                        <!-- Foto Mobile (Aumentada para 420px, sem bordas) -->
                         <div class="lg:hidden mb-10 flex justify-center">
                             <div class="w-full max-w-[420px] px-4">
                                 <img src="images/evitrol1.png" alt="Evitrol Metabolism Support" class="w-full h-auto drop-shadow-2xl">
@@ -167,7 +210,7 @@
                     <!-- Foto Desktop -->
                     <div class="reveal active delay-300 hidden lg:block">
                         <div class="relative max-w-md mx-auto">
-                            <div class="aspect-[4/5] bg-[#174243]/5 rounded-[3rem] overflow-hidden product-shadow border-8 border-white">
+                            <div class="aspect-[4/5] rounded-[3rem] overflow-hidden drop-shadow-2xl">
                                 <img src="images/evitrol1.png" alt="Evitrol Metabolic Formula" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
                             </div>
                         </div>
@@ -297,7 +340,7 @@
         </section>
     </main>
 
-    <!-- Rodapé Premium Escuro -->
+    <!-- Rodapé Premium Escuro (#1A1817) -->
     <footer class="py-20 border-t border-white/5 text-slate-400" style="background-color: var(--footer-bg);">
         <div class="container mx-auto px-6 text-center">
             <div class="mb-12">
@@ -319,7 +362,7 @@
 
             <div class="max-w-4xl mx-auto text-[9px] leading-relaxed text-slate-500 space-y-4 pt-10 border-t border-white/5">
                 <p data-i18n="disc_1">Disclaimer: This site is not a part of the Google™ or Meta Inc. website. Additionally, this site is NOT endorsed by Google™ or Meta Inc. in any way.</p>
-                <p data-i18n="disc_2">Evitrol is a natural dietary supplement. The statements on this website have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+                <p data-i18n="disc_2">Evitrol is a natural dietary supplement. The statements on this website have not been evaluated by the FDA. Individual results may vary. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
                 <p class="font-bold text-slate-600 uppercase tracking-[0.2em] pt-4">&copy; 2026 EVITROL METABOLICS. ALL RIGHTS RESERVED.</p>
             </div>
         </div>
@@ -362,15 +405,14 @@
                 start_quiz: "STOFFWECHSEL-QUIZ STARTEN",
                 premium_badge: "⭐ PREMIUM STOFFWECHSEL-UNTERSTÜTZUNG",
                 hero_title: 'Die <span class="gradient-text italic">„Metabolic Control“-Formel</span> für einen vitalen Körper',
-                hero_sub: "Ein präzisionsformuliertes tägliches Ergänzungsmittel zur Unterstützung des Stoffwechsels, zur Reduzierung von Heißhunger und zur Aufrechterhaltung eines natürlichen Fettverbrennungsrhythmus — ohne extreme Diäten oder aggressive Stimulanzien.",
-                benefit_1: "✔ Unterstützt die natürliche Stoffwechselfunktion",
-                benefit_2: "✔ Hilft bei der Appetitkontrolle",
-                benefit_3: "✔ Fördert tägliche Energie & Wohlbefinden",
+                hero_sub: "Ein präzisionsformuliertes tägliches Ergänzungsmittel zur Unterstützung des Stoffwechsels, zur Reduzierung von Heißhunger und zur Aufrechterhaltung eines natürlichen Fettverbrennungsrhythmus — ohne extreme Diäten.",
                 stat_1: "Spürbare Körperverbesserung*",
                 stat_2: "Naturbasierte Formel",
                 stat_3: "Tägliche Unterstützung",
                 stat_4: "Zufriedene Kunden",
                 faq_title: "Häufig gestellte Fragen",
+                authorized_distributor: "OFFIZIELLER AUTORISIERTER DISTRIBUTOR",
+                close_window: "FENSTER SCHLIESSEN",
                 faq_q1: "Wie unterstützt Evitrol den Stoffwechsel?",
                 faq_a1: "Evitrol wurde entwickelt, um die natürlichen Stoffwechselprozesse Ihres Körpers mit pflanzlichen Inhaltsstoffen zu unterstützen.",
                 faq_q2: "Kann Evitrol Heißhunger reduzieren?",
@@ -378,30 +420,27 @@
                 faq_q3: "Ist Evitrol für die tägliche Anwendung sicher?",
                 faq_a3: "Evitrol ist mit sorgfältig ausgewählten Inhaltsstoffen formuliert und für die tägliche Anwendung bestimmt.",
                 faq_q4: "Wie lange dauert es, bis Ergebnisse sichtbar sind?",
-                faq_a4: "Die Ergebnisse variieren je nach Stoffwechsel. Optimale Ergebnisse werden bei einer Anwendung über 60–90 Tage beobachtet.",
+                faq_a4: "Die Ergebnisse variieren. Optimale Ergebnisse werden bei einer Anwendung über 60–90 Tage beobachtet.",
                 faq_q5: "Hilft es bei Verdauung und Blähungen?",
                 faq_a5: "Evitrol enthält Inhaltsstoffe, die traditionell zur Unterstützung der Verdauung und des Darmkomforts verwendet werden.",
                 faq_q6: "Was unterscheidet Evitrol von anderen Produkten?",
-                faq_a6: "Im Gegensatz zu Produkten mit vielen Stimulanzien konzentriert sich Evitrol darauf, die natürlichen Prozesse des Körpers zu unterstützen.",
+                faq_a6: "Im Gegensatz zu stimulantienlastigen Produkten konzentriert sich Evitrol darauf, die natürlichen Prozesse Ihres Körpers zu unterstützen.",
                 faq_q7: "Für wen ist Evitrol gedacht?",
-                faq_a7: "Evitrol ist für Erwachsene geeignet, die ihren Stoffwechsel unterstützen und ein gesundes Gewicht halten möchten.",
-                authorized_distributor: "OFFIZIELLER AUTORISIERTER DISTRIBUTOR",
-                close_window: "FENSTER SCHLIESSEN"
+                faq_a7: "Evitrol ist für Erwachsene geeignet, die ihren Stoffwechsel unterstützen und ein gesundes Gewicht halten möchten."
             },
             fr: {
                 order_now: "COMMANDER MAINTENANT",
                 start_quiz: "DÉMARRER LE QUIZ MÉTABOLISME",
                 premium_badge: "⭐ SOUTIEN MÉTABOLIQUE PREMIUM",
-                hero_title: 'La Formule <span class="gradient-text italic">“Metabolic Control”</span> pour un Corps Affiné',
-                hero_sub: "Un complément quotidien de précision conçu pour soutenir le métabolisme, réduire les fringales et aider votre corps à maintenir un rythme naturel — sans régimes extrêmes ni stimulants agressifs.",
-                benefit_1: "✔ Soutient le métabolisme naturel",
-                benefit_2: "✔ Aide à réduire l'appétit incontrôlé",
-                benefit_3: "✔ Favorise l'énergie et l'équilibre quotidien",
+                hero_title: 'La Formule <span class="gradient-text italic">“Metabolic Control”</span> pour um Corps Affiné',
+                hero_sub: "Un complément quotidien de précision conçu pour soutenir le métabolisme, réduire les fringales et aider votre corps à maintenir un rythme naturel — sans régimes extrêmes.",
                 stat_1: "Amélioration Corporelle Visible*",
                 stat_2: "Formule à Base Naturelle",
                 stat_3: "Soutien Métabolique Quotidien",
                 stat_4: "Clients Satisfaits",
                 faq_title: "Foire aux questions",
+                authorized_distributor: "DISTRIBUTEUR OFFICIEL AUTORISÉ",
+                close_window: "FERMER LA FENÊTRE",
                 faq_q1: "Comment Evitrol soutient-il le métabolisme ?",
                 faq_a1: "Evitrol est conçu pour soutenir les processus métaboliques naturels de votre corps grâce à des ingrédients à base de plantes.",
                 faq_q2: "Evitrol peut-il aider à réduire les fringales ?",
@@ -415,9 +454,7 @@
                 faq_q6: "Qu'est-ce qui rend Evitrol différent ?",
                 faq_a6: "Contrairement aux produits riches en stimulants, Evitrol se concentre sur le soutien des processus naturels de votre corps.",
                 faq_q7: "À qui s'adresse Evitrol ?",
-                faq_a7: "Evitrol convient aux adultes qui souhaitent soutenir leur métabolisme et maintenir un poids équilibré.",
-                authorized_distributor: "DISTRIBUTEUR OFFICIEL AUTORISÉ",
-                close_window: "FERMER LA FENÊTRE"
+                faq_a7: "Evitrol convient aux adultes qui souhaitent soutenir leur métabolisme et maintenir un poids équilibré."
             }
         };
 
@@ -451,15 +488,34 @@
             const contents = {
                 privacy: { 
                     title: "Política de Privacidade", 
-                    html: `<p>Última atualização: 24 de outubro de 2025</p><h4>1. Dados pessoais que coletamos</h4><p>Coletamos nome, endereço e e-mail para processar pedidos de forma segura e transparente.</p>`
+                    html: `
+                        <p>Última atualização: 24 de outubro de 2025</p>
+                        <p>Esta Política de Privacidade (a “Política”) define as práticas da Haur BV (a “Operadora da Plataforma”, “nós”, “nosso” ou “nossos”) em relação à coleta, uso, divulgação e proteção dos seus dados pessoais como cliente (“você”) no website https://evitrol.com (o “Website”).</p>
+                        <h4>1. Dados pessoais que coletamos</h4>
+                        <p>Coletamos nome, endereço, e-mail e dados de transação para processar seus pedidos de forma segura.</p>
+                        <h4>2. Como utilizamos seus dados pessoais</h4>
+                        <p>Processamos seus dados para fornecer serviços, processar pagamentos e cumprir obrigações contratuais (RGPD).</p>
+                    `
                 },
                 terms: { 
                     title: "Nutzungsbedingungen", 
-                    html: `<h4>3. Keine Medizinische Beratung</h4><p>Nahrungsergänzungsmittel sind kein Ersatz für professionelle ärztliche Beratung.</p>`
+                    html: `
+                        <p>Zuletzt aktualisiert: 24. Oktober 2025</p>
+                        <p>Diese Bedingungen regeln Ihre Nutzung von Haur B.V. (RSIN: 867612939, John M. Keynesplein 1, Amsterdam).</p>
+                        <h4>3. Keine Medizinische Beratung</h4>
+                        <p>Die Website bietet keine medizinische Beratung, Diagnose oder Behandlung. Nahrungsergänzungsmittel sind kein Ersatz für professionelle ärztliche Beratung.</p>
+                    `
                 },
-                shipping: { title: "Shipping & Returns", html: `<p>Orders are processed in 1-3 business days. Delivery within EU typically takes 3-14 days.</p>` },
-                contact: { title: "Contact Us", html: `<p>Contact: support@get-evitrol.com</p>` }
+                shipping: {
+                    title: "Shipping & Returns",
+                    html: `<p>Orders are processed in 1-3 business days. Delivery within EU typically takes 3-14 days. 30-day return policy for unopened items.</p>`
+                },
+                contact: {
+                    title: "Contact Us",
+                    html: `<p>For questions regarding your order or our terms, please contact: support@get-evitrol.com or via our support portal.</p>`
+                }
             };
+            
             document.getElementById('modal-title').innerText = contents[type].title;
             document.getElementById('modal-content-area').innerHTML = contents[type].html;
             modal.classList.remove('hidden');
