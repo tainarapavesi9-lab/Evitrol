@@ -58,13 +58,14 @@
         .secondary-button { transition: all 0.3s ease; background: white; color: var(--brand-primary); border: 2px solid var(--brand-primary-soft); }
         .secondary-button:hover { background: var(--brand-primary-soft); border-color: var(--brand-primary); }
         
+        .product-shadow { box-shadow: 0 20px 40px -10px rgba(23, 66, 67, 0.15); }
         .gradient-text { color: var(--brand-primary); }
         .modal-open { overflow: hidden; }
 
         /* FAQ Sanfona */
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-        .faq-item.active .faq-answer { max-height: 600px; transition: max-height 0.5s ease-in; }
-        .faq-item.active .chevron-icon { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .faq-item.active .faq-answer { max-height: 800px; }
+        .faq-item.active .chevron-icon { transform: rotate(180deg); color: var(--brand-primary); }
         .chevron-icon { transition: transform 0.3s ease; }
 
         .legal-content h4 { font-weight: bold; margin-top: 1rem; color: #174243; }
@@ -78,7 +79,7 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header Premium -->
+    <!-- Header -->
     <header class="brand-header py-4 px-6 md:px-12 sticky top-0 z-50 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
@@ -91,13 +92,14 @@
     </header>
 
     <main>
-        <!-- Seção Hero Otimizada -->
+        <!-- Hero Section -->
         <section id="hero" class="hero-section-bg">
             <div class="hero-overlay-pattern"></div>
             
             <div class="container mx-auto px-6 py-8 md:py-20 relative z-10">
                 <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
                     
+                    <!-- Coluna de Conteúdo -->
                     <div class="reveal active text-center lg:text-left">
                         <div class="inline-flex items-center gap-2 bg-[#174243]/5 px-4 py-1.5 rounded-full mb-6 border border-[#174243]/10">
                             <span class="text-[10px] font-black uppercase tracking-widest text-[#174243]" data-i18n="premium_badge">⭐ PREMIUM METABOLIC SUPPORT</span>
@@ -140,7 +142,7 @@
                             </div>
                         </div>
 
-                        <!-- Card de CTA Estratégico -->
+                        <!-- Card de CTA -->
                         <div class="cta-card p-6 md:p-8 border-t-4 border-[#174243] max-w-md mx-auto lg:mx-0">
                             <div class="flex items-center justify-between mb-6">
                                 <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest" data-i18n="exclusive_access">[ EXCLUSIVE ACCESS ]</span>
@@ -165,7 +167,7 @@
                     <!-- Foto Desktop -->
                     <div class="reveal active delay-300 hidden lg:block">
                         <div class="relative max-w-md mx-auto">
-                            <div class="aspect-[4/5] rounded-[3rem] overflow-hidden drop-shadow-2xl">
+                            <div class="aspect-[4/5] bg-[#174243]/5 rounded-[3rem] overflow-hidden product-shadow border-8 border-white">
                                 <img src="images/evitrol1.png" alt="Evitrol Metabolic Formula" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
                             </div>
                         </div>
@@ -174,7 +176,7 @@
             </div>
         </section>
 
-        <!-- Seção de Estatísticas -->
+        <!-- Stats Section -->
         <section class="bg-[#174243] py-16">
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto text-white">
@@ -198,7 +200,7 @@
             </div>
         </section>
 
-        <!-- Seção FAQ com Efeito Sanfona -->
+        <!-- FAQ Section Completa -->
         <section class="py-24 bg-white">
             <div class="container max-w-4xl mx-auto px-6">
                 <div class="text-center mb-16">
@@ -206,7 +208,7 @@
                 </div>
                 
                 <div class="space-y-4" id="faq-container">
-                    <!-- Perguntas configuradas no script i18n -->
+                    <!-- Q1 -->
                     <div class="faq-item border border-slate-100 rounded-3xl overflow-hidden transition-all hover:border-[#174243]/20">
                         <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center bg-white group" onclick="toggleFaq(this)">
                             <span class="font-bold text-slate-800 text-base md:text-lg group-hover:text-[#174243]" data-i18n="faq_q1">How does Evitrol support metabolism and weight balance?</span>
@@ -214,10 +216,11 @@
                         </button>
                         <div class="faq-answer">
                             <div class="px-8 pb-8 text-slate-500 text-sm md:text-base leading-relaxed" data-i18n="faq_a1">
-                                Evitrol is designed to support your body’s natural metabolic processes using plant-based ingredients. It helps promote a more efficient metabolism.
+                                Evitrol is designed to support your body’s natural metabolic processes using plant-based ingredients. It helps promote a more efficient metabolism, which may support weight balance when combined with a balanced lifestyle.
                             </div>
                         </div>
                     </div>
+                    <!-- Q2 -->
                     <div class="faq-item border border-slate-100 rounded-3xl overflow-hidden transition-all hover:border-[#174243]/20">
                         <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center bg-white group" onclick="toggleFaq(this)">
                             <span class="font-bold text-slate-800 text-base md:text-lg group-hover:text-[#174243]" data-i18n="faq_q2">Can Evitrol help reduce cravings and appetite?</span>
@@ -225,7 +228,67 @@
                         </button>
                         <div class="faq-answer">
                             <div class="px-8 pb-8 text-slate-500 text-sm md:text-base leading-relaxed" data-i18n="faq_a2">
-                                Many users report feeling more in control of their appetite when using Evitrol consistently.
+                                Many users report feeling more in control of their appetite when using Evitrol consistently. The formula is designed to support satiety and help reduce unnecessary snacking throughout the day.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Q3 -->
+                    <div class="faq-item border border-slate-100 rounded-3xl overflow-hidden transition-all hover:border-[#174243]/20">
+                        <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center bg-white group" onclick="toggleFaq(this)">
+                            <span class="font-bold text-slate-800 text-base md:text-lg group-hover:text-[#174243]" data-i18n="faq_q3">Is Evitrol safe for daily use?</span>
+                            <i data-lucide="chevron-down" class="chevron-icon w-5 h-5 text-slate-400 group-hover:text-[#174243]"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="px-8 pb-8 text-slate-500 text-sm md:text-base leading-relaxed" data-i18n="faq_a3">
+                                Evitrol is formulated with carefully selected ingredients and is intended for daily use. However, if you are pregnant, nursing, or taking medication, it is recommended to consult a healthcare professional before use.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Q4 -->
+                    <div class="faq-item border border-slate-100 rounded-3xl overflow-hidden transition-all hover:border-[#174243]/20">
+                        <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center bg-white group" onclick="toggleFaq(this)">
+                            <span class="font-bold text-slate-800 text-base md:text-lg group-hover:text-[#174243]" data-i18n="faq_q4">How long does it take to notice results?</span>
+                            <i data-lucide="chevron-down" class="chevron-icon w-5 h-5 text-slate-400 group-hover:text-[#174243]"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="px-8 pb-8 text-slate-500 text-sm md:text-base leading-relaxed" data-i18n="faq_a4">
+                                Results may vary depending on individual metabolism and habits. Some users report noticeable changes within a few weeks, while optimal results are typically observed with consistent use over 60–90 days.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Q5 -->
+                    <div class="faq-item border border-slate-100 rounded-3xl overflow-hidden transition-all hover:border-[#174243]/20">
+                        <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center bg-white group" onclick="toggleFaq(this)">
+                            <span class="font-bold text-slate-800 text-base md:text-lg group-hover:text-[#174243]" data-i18n="faq_q5">Does Evitrol help with digestion and bloating?</span>
+                            <i data-lucide="chevron-down" class="chevron-icon w-5 h-5 text-slate-400 group-hover:text-[#174243]"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="px-8 pb-8 text-slate-500 text-sm md:text-base leading-relaxed" data-i18n="faq_a5">
+                                Evitrol includes ingredients traditionally used to support digestion and gut comfort. Many users experience reduced bloating and a lighter feeling as part of their routine.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Q6 -->
+                    <div class="faq-item border border-slate-100 rounded-3xl overflow-hidden transition-all hover:border-[#174243]/20">
+                        <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center bg-white group" onclick="toggleFaq(this)">
+                            <span class="font-bold text-slate-800 text-base md:text-lg group-hover:text-[#174243]" data-i18n="faq_q6">What makes Evitrol different from other supplements?</span>
+                            <i data-lucide="chevron-down" class="chevron-icon w-5 h-5 text-slate-400 group-hover:text-[#174243]"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="px-8 pb-8 text-slate-500 text-sm md:text-base leading-relaxed" data-i18n="faq_a6">
+                                Unlike stimulant-heavy products, Evitrol focuses on supporting your body’s natural processes. The formula is designed for consistent use without aggressive ingredients or extreme approaches.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Q7 -->
+                    <div class="faq-item border border-slate-100 rounded-3xl overflow-hidden transition-all hover:border-[#174243]/20">
+                        <button class="faq-toggle w-full px-8 py-6 text-left flex justify-between items-center bg-white group" onclick="toggleFaq(this)">
+                            <span class="font-bold text-slate-800 text-base md:text-lg group-hover:text-[#174243]" data-i18n="faq_q7">Who is Evitrol designed for?</span>
+                            <i data-lucide="chevron-down" class="chevron-icon w-5 h-5 text-slate-400 group-hover:text-[#174243]"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="px-8 pb-8 text-slate-500 text-sm md:text-base leading-relaxed" data-i18n="faq_a7">
+                                Evitrol is suitable for adults looking to support metabolism, improve daily energy, and maintain a balanced weight in a sustainable way.
                             </div>
                         </div>
                     </div>
@@ -262,7 +325,7 @@
         </div>
     </footer>
 
-    <!-- Sistema de Modais Legal -->
+    <!-- Sistema de Modais -->
     <div id="policy-modal" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true">
         <div class="fixed inset-0 bg-black/80 backdrop-blur-md" onclick="closeModal()"></div>
         <div class="fixed inset-0 z-10 overflow-y-auto">
@@ -284,6 +347,7 @@
     </div>
 
     <script>
+        // Lógica de FAQ
         function toggleFaq(button) {
             const item = button.parentElement;
             const isActive = item.classList.contains('active');
@@ -291,14 +355,36 @@
             if (!isActive) item.classList.add('active');
         }
 
+        // Dicionário de Traduções Completo
         const i18n = {
             de: {
                 order_now: "JETZT BESTELLEN",
                 start_quiz: "STOFFWECHSEL-QUIZ STARTEN",
-                premium_badge: "⭐ PREMIUM UNTERSTÜTZUNG",
+                premium_badge: "⭐ PREMIUM STOFFWECHSEL-UNTERSTÜTZUNG",
                 hero_title: 'Die <span class="gradient-text italic">„Metabolic Control“-Formel</span> für einen vitalen Körper',
-                stat_1: "Sichtbare Verbesserung*",
+                hero_sub: "Ein präzisionsformuliertes tägliches Ergänzungsmittel zur Unterstützung des Stoffwechsels, zur Reduzierung von Heißhunger und zur Aufrechterhaltung eines natürlichen Fettverbrennungsrhythmus — ohne extreme Diäten oder aggressive Stimulanzien.",
+                benefit_1: "✔ Unterstützt die natürliche Stoffwechselfunktion",
+                benefit_2: "✔ Hilft bei der Appetitkontrolle",
+                benefit_3: "✔ Fördert tägliche Energie & Wohlbefinden",
+                stat_1: "Spürbare Körperverbesserung*",
+                stat_2: "Naturbasierte Formel",
+                stat_3: "Tägliche Unterstützung",
+                stat_4: "Zufriedene Kunden",
                 faq_title: "Häufig gestellte Fragen",
+                faq_q1: "Wie unterstützt Evitrol den Stoffwechsel?",
+                faq_a1: "Evitrol wurde entwickelt, um die natürlichen Stoffwechselprozesse Ihres Körpers mit pflanzlichen Inhaltsstoffen zu unterstützen.",
+                faq_q2: "Kann Evitrol Heißhunger reduzieren?",
+                faq_a2: "Viele Anwender berichten, dass sie ihren Appetit bei konsequenter Anwendung von Evitrol besser unter Kontrolle haben.",
+                faq_q3: "Ist Evitrol für die tägliche Anwendung sicher?",
+                faq_a3: "Evitrol ist mit sorgfältig ausgewählten Inhaltsstoffen formuliert und für die tägliche Anwendung bestimmt.",
+                faq_q4: "Wie lange dauert es, bis Ergebnisse sichtbar sind?",
+                faq_a4: "Die Ergebnisse variieren je nach Stoffwechsel. Optimale Ergebnisse werden bei einer Anwendung über 60–90 Tage beobachtet.",
+                faq_q5: "Hilft es bei Verdauung und Blähungen?",
+                faq_a5: "Evitrol enthält Inhaltsstoffe, die traditionell zur Unterstützung der Verdauung und des Darmkomforts verwendet werden.",
+                faq_q6: "Was unterscheidet Evitrol von anderen Produkten?",
+                faq_a6: "Im Gegensatz zu Produkten mit vielen Stimulanzien konzentriert sich Evitrol darauf, die natürlichen Prozesse des Körpers zu unterstützen.",
+                faq_q7: "Für wen ist Evitrol gedacht?",
+                faq_a7: "Evitrol ist für Erwachsene geeignet, die ihren Stoffwechsel unterstützen und ein gesundes Gewicht halten möchten.",
                 authorized_distributor: "OFFIZIELLER AUTORISIERTER DISTRIBUTOR",
                 close_window: "FENSTER SCHLIESSEN"
             },
@@ -306,9 +392,30 @@
                 order_now: "COMMANDER MAINTENANT",
                 start_quiz: "DÉMARRER LE QUIZ MÉTABOLISME",
                 premium_badge: "⭐ SOUTIEN MÉTABOLIQUE PREMIUM",
-                hero_title: 'La Formule <span class="gradient-text italic">“Metabolic Control”</span> pour um Corps Affiné',
+                hero_title: 'La Formule <span class="gradient-text italic">“Metabolic Control”</span> pour un Corps Affiné',
+                hero_sub: "Un complément quotidien de précision conçu pour soutenir le métabolisme, réduire les fringales et aider votre corps à maintenir un rythme naturel — sans régimes extrêmes ni stimulants agressifs.",
+                benefit_1: "✔ Soutient le métabolisme naturel",
+                benefit_2: "✔ Aide à réduire l'appétit incontrôlé",
+                benefit_3: "✔ Favorise l'énergie et l'équilibre quotidien",
                 stat_1: "Amélioration Corporelle Visible*",
+                stat_2: "Formule à Base Naturelle",
+                stat_3: "Soutien Métabolique Quotidien",
+                stat_4: "Clients Satisfaits",
                 faq_title: "Foire aux questions",
+                faq_q1: "Comment Evitrol soutient-il le métabolisme ?",
+                faq_a1: "Evitrol est conçu pour soutenir les processus métaboliques naturels de votre corps grâce à des ingrédients à base de plantes.",
+                faq_q2: "Evitrol peut-il aider à réduire les fringales ?",
+                faq_a2: "De nombreux utilisateurs rapportent avoir un meilleur contrôle de leur appétit en utilisant Evitrol régulièrement.",
+                faq_q3: "Evitrol est-il sûr pour un usage quotidien ?",
+                faq_a3: "Evitrol est formulé avec des ingrédients soigneusement sélectionnés et est destiné à un usage quotidien.",
+                faq_q4: "Combien de temps faut-il pour voir des résultats ?",
+                faq_a4: "Les résultats varient. Les résultats optimaux sont généralement observés après une utilisation de 60 à 90 jours.",
+                faq_q5: "Evitrol aide-t-il à la digestion ?",
+                faq_a5: "Evitrol contient des ingrédients traditionnellement utilisés pour soutenir la digestion et le confort intestinal.",
+                faq_q6: "Qu'est-ce qui rend Evitrol différent ?",
+                faq_a6: "Contrairement aux produits riches en stimulants, Evitrol se concentre sur le soutien des processus naturels de votre corps.",
+                faq_q7: "À qui s'adresse Evitrol ?",
+                faq_a7: "Evitrol convient aux adultes qui souhaitent soutenir leur métabolisme et maintenir un poids équilibré.",
                 authorized_distributor: "DISTRIBUTEUR OFFICIEL AUTORISÉ",
                 close_window: "FERMER LA FENÊTRE"
             }
